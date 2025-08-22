@@ -2,6 +2,7 @@ import { CheckSquare } from 'lucide-react';
 import { TodoInput } from './components/TodoInput';
 import { TodoFilter } from './components/TodoFilter';
 import { useTodos } from './hooks/useTodos';
+import { TodoList } from './components/TodoList';
 
 function App() {
   const {
@@ -44,6 +45,17 @@ function App() {
             completedCount={completedCount}
           />
         </div>
+
+        {/* Todo List */}
+        <div className="mb-6">
+          <TodoList
+            todos={filteredTodos}
+            onToggle={toggleTodo}
+            onDelete={deleteTodo}
+          />
+        </div>
+
+        
       </div>
     </div>
   );
