@@ -3,6 +3,7 @@ import { TodoInput } from './components/TodoInput';
 import { TodoFilter } from './components/TodoFilter';
 import { useTodos } from './hooks/useTodos';
 import { TodoList } from './components/TodoList';
+import { TodoStats } from './components/TodoStats';
 
 function App() {
   const {
@@ -55,7 +56,14 @@ function App() {
           />
         </div>
 
-        
+        {/* Stats */}
+        <div className="mb-6">
+          <TodoStats
+            activeCount={activeCount}
+            completedCount={completedCount}
+            onClearCompleted={clearCompleted}
+          />
+        </div>
       </div>
     </div>
   );
